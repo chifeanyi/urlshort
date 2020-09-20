@@ -1,0 +1,526 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  font-size: 18px;
+  color: hsl(0, 0%, 75%);
+}
+
+h1, h3, h4 {
+  color: hsl(260, 8%, 14%);
+  font-weight: 700;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+li {
+  cursor: pointer;
+}
+
+/* Button Style */
+a {
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: 350ms color;
+}
+
+.active {
+  background-color: hsl(180, 66%, 49%);
+  color: white;
+  padding: 10px 30px;
+  border-radius: 50px;
+  width: fit-content;
+  transition: 350ms background-color;
+}
+
+.active:hover {
+  background-color: rgb(157, 226, 225);
+}
+
+/* Navbar Style */
+.nav-container {
+  padding: 2rem 0;
+}
+
+.nav-container nav {
+  padding: 0 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-container .navLeft {
+  display: flex;
+  align-items: center;
+  width: 37%;
+  justify-content: space-between;
+}
+
+.nav-container ul {
+  display: none;
+}
+
+.nav-container ul li {
+  list-style: none;
+  margin: 0 10%;
+  font-weight: 700;
+  font-size: medium;
+  transition: 350ms color;
+}
+
+.nav-container .navLinks {
+  display: none;
+}
+
+.nav-container .navLinks .active {
+  margin-left: 1rem;
+}
+
+.nav-container .fa-bars {
+  color: hsl(0, 0%, 75%);
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Mobile Menue */
+.mobileMenue {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  margin: 0 10%;
+  padding: 7% 5%;
+  background-color: hsl(257, 27%, 26%);
+  border-radius: 10px;
+  position: absolute;
+  width: 80%;
+  opacity: 0;
+  transition: 350ms opacity;
+}
+
+.mobileMenue ul {
+  width: 100%;
+}
+
+.mobileMenue li {
+  list-style: none;
+  margin-bottom: 7%;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.mobileMenue hr {
+  margin: 10% 0;
+  opacity: 0.2;
+}
+
+.mobileMenue a {
+  display: block;
+  margin-top: 10%;
+  color: white;
+  width: 100%;
+}
+
+/* Main Style */
+main p {
+  margin: 20px 0;
+  color: hsl(257, 7%, 63%);
+}
+
+.top {
+  text-align: center;
+  padding: 0 10%;
+}
+
+.top img {
+  width: 140%;
+}
+
+.topContent {
+  margin: 30px 0;
+}
+
+.middleContainer {
+  width: 100%;
+  padding: 15% 10% 0;
+  background-image: linear-gradient(white 50%, rgb(240, 241, 246) 50%);
+  position: relative;
+}
+
+.middle {
+  background-color: hsl(257, 27%, 26%);
+  display: grid;
+  grid-row: 1fr 1fr;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  align-items: center;
+  background-image: url("./images/bg-shorten-mobile.svg");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: cover;
+}
+
+.middle div {
+  height: 100%;
+}
+
+.middle input {
+  height: 100%;
+  border-radius: 5px;
+  border: 0;
+  padding: 5%;
+  font-size: 18px;
+  color: hsl(0, 0%, 75%);
+}
+
+.middle input::placeholder {
+  font-size: 18px;
+  color: hsl(0, 0%, 75%);
+}
+
+input.empty {
+  border: 2px solid hsl(0, 87%, 67%);
+  position: relative;
+}
+
+input.empty::placeholder {
+  color: hsl(0, 87%, 67%);
+}
+
+#emptyMsg {
+  margin: 0;
+  color: hsl(0, 87%, 67%);
+  font-size: 1rem;
+  font-style: italic;
+}
+
+button.square {
+  background-color: hsl(180, 66%, 49%);
+  color: white;
+  padding: 10px 30px;
+  border-radius: 50px;
+  -webkit-appearance: none;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  border: 0;
+}
+
+button.copy {
+  background-color: hsl(257, 27%, 26%);
+}
+
+.short-section {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  gap: 20px;
+  padding: 5%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  align-items: center;
+}
+
+.short-section p {
+  text-align: left;
+  margin: 0;
+}
+
+.short-section-url {
+  color: hsl(180, 66%, 49%);
+}
+
+.original-url {
+  text-align: left;
+  color: hsl(260, 8%, 14%);
+}
+
+.bottom {
+  text-align: center;
+  background-color: rgb(240, 241, 246);
+  padding: 10%;
+}
+
+.bottomHead h3 {
+  font-size: 2rem;
+}
+
+.card {
+  margin-bottom: 50px;
+}
+
+.card .imgHolder {
+  background-color: hsl(257, 27%, 26%);
+  padding: 40px;
+  border-radius: 100%;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.imgHolder img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.cardMain {
+  padding: 80px 35px 40px;
+  background-color: white;
+  margin-top: -40px;
+  border-radius: 5px;
+}
+
+.cardMain h4 {
+  font-size: 1.5rem;
+}
+
+.cardsContainer {
+  position: relative;
+  z-index: 0;
+}
+
+.link {
+  position: absolute;
+  width: 10px;
+  background-color: hsl(180, 66%, 49%);
+  height: 50%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+
+/* Boost Section */
+.ad {
+  padding: 90px 10%;
+  text-align: center;
+  background-color: hsl(257, 27%, 26%);
+  background-image: url("./images/bg-boost-mobile.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: top right;
+  align-content: center;
+}
+
+.ad h3 {
+  font-size: 2rem;
+  color: white;
+  margin-bottom: 15px;
+}
+
+footer {
+  padding: 10%;
+  text-align: center;
+  background-color: hsl(260, 8%, 14%);
+}
+
+footer li {
+  list-style: none;
+  font-weight: 200;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+footer li:hover {
+  cursor: pointer;
+  color: hsl(180, 66%, 49%);
+}
+
+.footerlist {
+  margin: 40px 0;
+}
+
+.footerlist h6 {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.socialMedia {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 30%;
+}
+
+.socialMedia svg path:hover {
+  cursor: pointer;
+  fill: hsl(180, 66%, 49%);
+}
+
+@media screen and (min-width: 1130px) {
+  .mobileMenue {
+    display: none;
+  }
+
+  .nav-container ul {
+    display: flex;
+  }
+
+  .nav-container ul li:hover {
+    color: hsl(260, 8%, 14%);
+  }
+
+  .nav-container .navLinks {
+    display: inline;
+  }
+
+  #login:hover {
+    color: hsl(260, 8%, 14%);
+  }
+
+  #hamburger {
+    display: none;
+  }
+
+  .top {
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 2fr 1fr;
+    align-items: center;
+    margin: 3% 0;
+  }
+
+  .topContent {
+    grid-area: left;
+    text-align: left;
+    margin: 0;
+    margin-right: 10%;
+  }
+
+  .topContent h1 {
+    font-size: 4.5rem;
+    line-height: 1.2em;
+  }
+
+  .top img {
+    grid-area: right;
+  }
+
+  .middleContainer {
+    padding: 5% 10%;
+  }
+
+  .middle {
+    padding: 3%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-image: url("./images/bg-shorten-desktop.svg");
+  }
+
+  .middle .square {
+    height: 100%;
+  }
+
+  .short-section {
+    background-color: white;
+    display: grid;
+    grid-template-columns: 4fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding: 2% 5%;
+  }
+
+  .middle input[type=text] {
+    padding: 2%;
+    position: relative;
+  }
+
+  #emptyMsg {
+    position: absolute;
+    top: 65%;
+  }
+
+  .bottom {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  .cardsContainer {
+    text-align: left;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2%;
+    padding: 5% 0;
+  }
+
+  .bottomHead p {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .cardMain h4 {
+    font-size: 1.5vw;
+  }
+
+  .cardMain p {
+    font-size: 1vw;
+  }
+
+  #card2 {
+    margin-top: 10%;
+  }
+
+  #card3 {
+    margin-top: 20%;
+  }
+
+  .card .imgHolder {
+    margin: 0;
+    margin-left: 25px;
+  }
+
+  .link {
+    height: 10px;
+    width: 50%;
+  }
+
+  .ad {
+    background-image: url("./images/bg-boost-desktop.svg");
+    background-size: cover;
+    background-position: top right;
+  }
+
+  footer {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr auto;
+    padding: 5% 10%;
+    text-align: left;
+  }
+
+  footer .list {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 10%;
+  }
+
+  .footerlist {
+    margin: 0;
+  }
+
+  .socialMedia {
+    padding: 0;
+    justify-content: flex-end;
+    width: 15vw;
+  }
+
+  .socialMedia svg {
+    margin: 0 5%;
+  }
+}
